@@ -15,8 +15,9 @@ async function getAveragePrice(year){
     const sql = await init();
     const query = sql.format("SELECT price FROM cars WHERE year = ?",
         year);
-    let a = await sql.query(query);
-    console.log(a);
+    let [rows, fields] = await sql.query(query);
+    console.log(rows);
+    console.log(rows[0].price)
 }
 
 let sqlPromise = null;

@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "node_modules/.bin/eslint .",
     "test": "node ./node_modules/.bin/qunit test.js",
-    "initsql": "mysql -u root -p password < worksheet/cardb_init.sql"
+    "initsql": "mysql -u root -p < worksheet/cardb_init.sql"
   },
   "keywords": [
     "node"

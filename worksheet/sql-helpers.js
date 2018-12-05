@@ -11,6 +11,17 @@ async function insertSingle(reg, make, model, year, price){
     await sql.query(insertQuery)
 }
 
+async function getAveragePrice(year){
+    const sql = await init();
+    const query = sql.format("SELECT price FROM cars WHERE year = ?",
+        year);
+    await sql.query(query,
+        function (err, results, fields){
+        console.log(results);
+        console.log(fields);
+        })
+}
+
 let sqlPromise = null;
 
 async function init(){
@@ -41,5 +52,6 @@ async function shutDown() {
 
 module.exports = {
     insert: insertSingle,
-    shutdown: shutDown
+    shutdown: shutDown,
+    getAveragePrice: getAveragePrice
 };

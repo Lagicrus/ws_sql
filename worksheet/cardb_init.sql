@@ -5,6 +5,6 @@ create table if not exists ws_sql.cars (
   reg varchar(12),
   make varchar(250),
   model varchar(250),
-  car_year YEAR(4),
+  year YEAR(4),
   price DECIMAL
 );

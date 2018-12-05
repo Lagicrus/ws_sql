@@ -3,7 +3,7 @@
     "host": "localhost",
     "user": "root",
     "password": "root",
-    "database": "ws_sql_example",
+    "database": "ws_sql",
     "table": "cars"
   }
 }

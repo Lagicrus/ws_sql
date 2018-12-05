@@ -13,7 +13,7 @@ async function insertSingle(reg, make, model, year, price){
 
 async function getAveragePrice(year){
     const sql = await init();
-    const query = sql.format("SELECT AVG(price) FROM cars WHERE year = ?",
+    const query = sql.format("SELECT AVG(price) as avg FROM cars WHERE year = ?",
         year);
     let [rows, fields] = await sql.query(query);
     return rows[0].avg;

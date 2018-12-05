@@ -25,7 +25,7 @@ async function saveCar(reg, make, model, year, price){
 }
 
 async function getAveragePrice(year){
-    await sqlHelpers.getAveragePrice(year);
+    return await sqlHelpers.getAveragePrice(year)
 }
 
 async function shutdown(){

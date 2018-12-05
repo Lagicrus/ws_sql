@@ -18,15 +18,20 @@ async function getAveragePrice(year){
     let [rows, fields] = await sql.query(query);
     let avg_list = [];
     console.log(rows);
-    for (data of rows){
-        avg_list.push(data.price)
+    try {
+        for (data of rows) {
+            avg_list.push(data.price)
+        }
+        console.log(avg_list);
+        console.log(rows[0].price);
+        let sum = avg_list.reduce(function (accumulator, currentValue) {
+            return accumulator + currentValue;
+        }, 0);
+        return sum / avg_list.length;
     }
-    console.log(avg_list);
-    console.log(rows[0].price);
-    let sum = avg_list.reduce(function (accumulator, currentValue){
-        return accumulator + currentValue;
-    }, 0);
-    return sum/avg_list.length;
+    catch {
+        return 0;
+    }
 }
 
 let sqlPromise = null;

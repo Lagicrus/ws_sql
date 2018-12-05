@@ -7,7 +7,6 @@ async function insertSingle(reg, make, model, year, price){
     const sql = await init();
     const insertQuery = sql.format("INSERT INTO cars (reg, make, model, year, price) VALUES (?, ?, ?, ?, ?)",
         [reg, make, model, year, price]);
-    console.log(insertQuery);
     await sql.query(insertQuery)
 }
 

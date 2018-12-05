@@ -20,7 +20,6 @@ const sqlHelpers = require("./sql-helpers");
 
 async function saveCar(reg, make, model, year, price){
     await sqlHelpers.insert(reg, make, model, year, price);
-    console.log(`Inserted ${reg} ${make}`);
     await sqlHelpers.shutdown();
 }
 

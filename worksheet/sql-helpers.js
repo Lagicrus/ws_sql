@@ -5,7 +5,7 @@ const config = require("./config");
 
 async function insertSingle(reg, make, model, year, price){
     const sql = await init();
-    const insertQuery = sql.format("INSERT INTO car (reg, make, model, year, price) VALUES (? ? ? ? ?)",
+    const insertQuery = sql.format("INSERT INTO car (reg, make, model, year, price) VALUES (?, ?, ?, ?, ?)",
         [reg, make, model, year, price]);
     console.log(insertQuery);
     await sql.query(insertQuery)
